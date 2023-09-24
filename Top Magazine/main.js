@@ -1,3 +1,5 @@
+import { inicializarCarrinho } from "./src/menuCarrinho";
+
 const catalogo = [
   {
     id: 1,
@@ -65,7 +67,7 @@ const catalogo = [
   },
   {
     id: 9,
-    marca: "Zara",
+    marca: "Abam",
     nome: "Adaptador M1 para MacBook",
     preco: 237.29,
     imagem: "Adaptador-M1.jpg",
@@ -73,7 +75,7 @@ const catalogo = [
   },
   {
     id: 10,
-    marca: "JBL",
+    marca: "Geonav",
     nome: "Cabo Adaptador USB-C para USB 3.0",
     preco: 590.46,
     imagem: "Cabo_Adaptador-USB.jpg",
@@ -108,3 +110,5 @@ for (const produtoCatalogo of catalogo) {
 </div>`;
   document.getElementById("container-produto").innerHTML += cartaoProduto;
 }
+
+inicializarCarrinho();

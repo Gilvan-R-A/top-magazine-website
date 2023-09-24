@@ -8,10 +8,10 @@
   <title>Document</title>
 </head>
 <body>
-  <section id="carrinho" class="fixed top-0 right-0 bg-indigo-950 h-screen w-[360px] text-slate-200">
+  <section id="carrinho" class="fixed top-0 right-[-360px] bg-indigo-950 h-screen w-[360px] text-slate-200">
     <div id="cabecalho-carrinho" class="flex justify-between m-4">
       <p>Meu carrinho</p>
-      <button><i class="fa-solid fa-circle-xmark"></i></button>
+      <button><i id="fechar-carrinho" class="fa-solid fa-circle-xmark"></i></button>
     </div>
 
     <section id="produtos-carrinho">
@@ -27,7 +27,7 @@
   <header class="flex bg-indigo-950 p-2 justify-between">
     <h1 class="flex h-16 logo">Top Magazine</h1>
     <div class="text-slate-200 flex gap-2 items-end">
-      <button><i class="fa-solid fa-cart-shopping"></i></button>
+      <button id="abrir-carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
       <button><i class="fa-solid fa-user"></i></button>
     </div>
   
@@ -35,6 +35,6 @@
   <main>
     <section id="container-produto" class="flex flex-wrap"></section>
   </main>
-  <script src="./main.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 </html>
