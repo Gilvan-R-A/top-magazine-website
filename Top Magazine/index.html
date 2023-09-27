@@ -8,25 +8,37 @@
   <title>Document</title>
 </head>
 <body class="bg-stone-200 flex flex-col">
-  <section id="carrinho" class="fixed top-0 right-[-360px] bg-slate-950 h-screen w-[360px] text-slate-200 z-50">
+
+  <section id="carrinho" class="fixed top-0 right-[-360px] bg-slate-950 h-screen w-[360px] text-slate-200 z-50 duration-200 border-1 border-slate-200 p-5 flex flex-col justify-between">
     <div id="cabecalho-carrinho" class="flex justify-between m-4">
       <p>Meu carrinho</p>
-      <button><i id="fechar-carrinho" class="fa-solid fa-circle-xmark"></i></button>
+      <button id="fechar-carrinho"><i class="fa-solid fa-circle-xmark"></i></button>
     </div>
 
     <section id="produtos-carrinho">
-      <p>Galaxy Z-Flip</p>
-      <p>Tablet Galaxy Tab S9</p>
-      <p>Caixa de Som Party Box</p>
+      <article class="flex bg-slate-100 rounded-lg p1 relative">
+        <button id="fechar-carrinho" class="absolute top-0 right-2">
+          <i class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"></i>
+        </button>
+        <img src="./assets/img/Galaxy_S23.jpeg" alt="Galaxy S21" class="h-24 rounded-lg">
+        <div>
+          <p class="text-slate-900 text-sm">Smartphone Galaxy S23</p>
+          <p class="text-slate-400 text-xs">Sansung</p>
+          <p class="text-green-700 text-lg">$199</p>
+        </div>
+          
+        
+      </article>
     </section>
+
     <p id="preco-total">$1200</p>
-    <button class="bg-slate-200 text-slate-900">Finalizar Compra</button>
+    <button class="bg-slate-200 text-slate-900 p-1">Finalizar Compra</button>
 
 
   </section>
   <header class="flex text-xl bg-slate-950 px-8 py-4 justify-between sticky top-0 shadow-xl shadow-slate-400 z-10">
     <h1 class="flex h-16 logo">Top Magazine</h1>
-    <div class="text-slate-200 flex gap-2 items-end">
+    <div class="text-slate-200 flex gap-2 items-end mx-2">
       <button id="abrir-carrinho" class="mx-2"><i class="fa-solid fa-cart-shopping"></i></button>
       <button class="mr-2"><i class="fa-solid fa-user"></i></button>
     </div>
