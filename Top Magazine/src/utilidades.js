@@ -72,7 +72,7 @@ export const catalogo = [
   },
   {
     id: 11,
-    marca: "Accer",
+    marca: "Geonav",
     nome: "Carregador para Notebook 65W",
     preco: 382.72,
     imagem: "Carregador-65W.jpg"
