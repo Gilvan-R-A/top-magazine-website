@@ -4,84 +4,92 @@ export const catalogo = [
     id: "1",
     marca: "Laut",
     nome: "Capa para iPhone 7",
-    preco: 59.99,
+    preco: 59,
     imagem: "Capa_Iphone7.jpg"
   },
   {
     id: "2",
     marca: "Sansung",
     nome: "Smartphone Galaxy S23 Ultra 5G",
-    preco: 199.99,
+    preco: 199,
     imagem: "Galaxy_S23.jpeg"
   },
   {
     id: "3",
     marca: "Sansung",
     nome: "Galaxy Watch 5",
-    preco: 2499.79,
+    preco: 2499,
     imagem: "galaxy_watch5.jpeg"
   },
   {
     id: "4",
     marca: "Sansung",
     nome: "Galaxy Watch 6 Classic LTE",
-    preco: 3549.98,
+    preco: 3549,
     imagem: "Galaxy_Watch6_BT.jpeg"
   },
   {
     id: "5",
     marca: "JBL",
     nome: "Caixa de Som Portátil JBL Party Box",
-    preco: 1999.99,
+    preco: 1999,
     imagem: "Caixa_Som_PartyBox.jpeg"
   },
   {
     id: "6",
     marca: "Sansung",
     nome: "Tablet Galaxy Tab S9",
-    preco: 6999.78,
+    preco: 6999,
     imagem: "Galaxy_Tab_S9.jpeg"
   },
   {
     id: "7",
     marca: "Sansung",
     nome: "Smartphone Galaxy Z Flip5 5G",
-    preco: 6579.95,
+    preco: 6579,
     imagem: "Galaxy_Z_Flip5.jpeg"
   },
   {
     id: "8",
     marca: "Top",
     nome: "Leitor de Cartões com Chip e Senha",
-    preco: 58.85,
+    preco: 58,
     imagem: "Leitor-Cartoes_Top.jpg"
   },
   {
     id: "9",
     marca: "Abam",
     nome: "Adaptador M1 para MacBook",
-    preco: 237.29,
+    preco: 237,
     imagem: "Adaptador-M1.jpg"
   },
   {
     id: "10",
     marca: "Geonav",
     nome: "Cabo Adaptador USB-C para USB 3.0",
-    preco: 590.46,
+    preco: 590,
     imagem: "Cabo_Adaptador-USB.jpg"
   },
   {
     id: "11",
     marca: "Geonav",
     nome: "Carregador para Notebook 65W",
-    preco: 382.72,
+    preco: 382,
     imagem: "Carregador-65W.jpg"
   },
   {
     id: "12",
     marca: "Electrolux",
     nome: "Panela de Pressão Elétrica",
-    preco: 609.95,
+    preco: 609,
     imagem: "Panela-Eletrica-Eletrolux.jpeg"
   },
 ];
+
+export function salvarLocalStorage(chave, informacao) {
+  localStorage.setItem(chave, JSON.stringify(informacao));
+}
+
+export function lerLocalStorage(chave) {
+  return JSON.parse(localStorage.getItem(chave));
+}
