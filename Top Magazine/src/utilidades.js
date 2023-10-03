@@ -2,45 +2,45 @@
 export const catalogo = [
   {
     id: "1",
-    marca: "Laut",
-    nome: "Capa para iPhone 7",
-    preco: 59,
-    imagem: "Capa_Iphone7.jpg"
+    marca: "Sansung",
+    nome: "Tablet Galaxy Tab S9",
+    preco: 6999,
+    imagem: "Galaxy_Tab_S9.jpeg"
   },
   {
     id: "2",
+    marca: "Apple",
+    nome: "mouse MacMouse",
+    preco: 500,
+    imagem: "mouse.jpg"
+  },
+  {
+    id: "3",
+    marca: "Accer",
+    nome: "notebook Gamer 3000M",
+    preco: 4600,
+    imagem: "notebookAccer.jpg"
+  },
+  {
+    id: "4",
     marca: "Sansung",
     nome: "Smartphone Galaxy S23 Ultra 5G",
     preco: 199,
     imagem: "Galaxy_S23.jpeg"
   },
   {
-    id: "3",
-    marca: "Sansung",
-    nome: "Galaxy Watch 5",
-    preco: 2499,
-    imagem: "galaxy_watch5.jpeg"
-  },
-  {
-    id: "4",
-    marca: "Sansung",
-    nome: "Galaxy Watch 6 Classic LTE",
-    preco: 3549,
-    imagem: "Galaxy_Watch6_BT.jpeg"
-  },
-  {
     id: "5",
-    marca: "JBL",
-    nome: "Caixa de Som Portátil JBL Party Box",
-    preco: 1999,
-    imagem: "Caixa_Som_PartyBox.jpeg"
+    marca: "Apple",
+    nome: "MacBook Air",
+    preco: 10700,
+    imagem: "laptop.jpg"
   },
   {
     id: "6",
-    marca: "Sansung",
-    nome: "Tablet Galaxy Tab S9",
-    preco: 6999,
-    imagem: "Galaxy_Tab_S9.jpeg"
+    marca: "Apple",
+    nome: "iPad",
+    preco: 3500,
+    imagem: "iPad.jpg"
   },
   {
     id: "7",
@@ -51,38 +51,59 @@ export const catalogo = [
   },
   {
     id: "8",
-    marca: "Top",
-    nome: "Leitor de Cartões com Chip e Senha",
-    preco: 58,
-    imagem: "Leitor-Cartoes_Top.jpg"
-  },
-  {
-    id: "9",
     marca: "Abam",
     nome: "Adaptador M1 para MacBook",
     preco: 237,
     imagem: "Adaptador-M1.jpg"
   },
   {
-    id: "10",
+    id: "9",
     marca: "Geonav",
     nome: "Cabo Adaptador USB-C para USB 3.0",
     preco: 590,
     imagem: "Cabo_Adaptador-USB.jpg"
   },
   {
+    id: "10",
+    marca: "Compaq",
+    nome: "notebook Compaq 7000S",
+    preco: 2300,
+    imagem: "notebookCompaq.jpg"
+  }, 
+  {
     id: "11",
-    marca: "Geonav",
-    nome: "Carregador para Notebook 65W",
-    preco: 382,
-    imagem: "Carregador-65W.jpg"
+    marca: "Cânon",
+    nome: "camêra Cânon 500",
+    preco: 890,
+    imagem: "canon.jpg"
   },
   {
     id: "12",
-    marca: "Electrolux",
-    nome: "Panela de Pressão Elétrica",
-    preco: 609,
-    imagem: "Panela-Eletrica-Eletrolux.jpeg"
+    marca: "Sansung",
+    nome: "Galaxy Watch 6 Classic LTE",
+    preco: 3549,
+    imagem: "Galaxy_Watch6_BT.jpeg"
+  },
+  {
+    id: "13",
+    marca: "Sansung",
+    nome: "Galaxy Watch 5",
+    preco: 2499,
+    imagem: "galaxy_watch5.jpeg"
+  },
+  {
+    id: "14",
+    marca: "Sansung",
+    nome: "notebook sansung plus",
+    preco: 3000,
+    imagem: "notebookSansung.jpg"
+  },
+  {
+    id: "15",
+    marca: "Dell",
+    nome: "notebook gamer D40",
+    preco: 5650,
+    imagem: "notebookGamer.jpg"
   },
 ];
 
