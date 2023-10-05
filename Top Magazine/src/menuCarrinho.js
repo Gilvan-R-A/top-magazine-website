@@ -15,9 +15,11 @@ function fecharCarrinho() {
 export function inicializarCarrinho() {
   const botaoFecharCarrinho = document.getElementById("fechar-carrinho");
   const botaoAbrirCarrinho = document.getElementById("abrir-carrinho");
+  const botaoIrParaCheckout = document.getElementById("finalizar-compra");
 
   botaoFecharCarrinho.addEventListener("click", fecharCarrinho);
   botaoAbrirCarrinho.addEventListener("click", abrirCarrinho);
+  botaoIrParaCheckout.addEventListener("click", irParaCheckout);
 }
 
 function removerDoCarrinho(idProduto) {
@@ -115,3 +117,10 @@ export function atualizarPrecoCarrinho() {
   precoCarrinho.innerText = `Total: $ ${precoTotalCarrinho}`;
 }
 
+
+function irParaCheckout() {
+  if (Object.keys(idsProdutoCarrinhoComQuantidade).length === 0) {
+    return;
+  }
+  window.location.href = window.location.origin + "/checkout.html";
+}
