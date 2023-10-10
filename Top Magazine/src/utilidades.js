@@ -130,6 +130,10 @@ export function lerLocalStorage(chave) {
   return JSON.parse(localStorage.getItem(chave));
 }
 
+export function apagarDoLocalStorage(chave) {
+  localStorage.removeItem(chave);
+}
+
 export function desenharProdutoNoCarrinhoSimples(idProduto, idContainerHTML, quantidadeProduto) {
   const produto = catalogo.find((p) => p.id === idProduto);
   const containerProdutosCarrinho = document.getElementById(idContainerHTML);
