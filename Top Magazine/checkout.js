@@ -3,7 +3,7 @@ import {
   desenharProdutoNoCarrinhoSimples,
   lerLocalStorage,
   salvarLocalStorage,
-} from "./utilidades";
+} from "./src/utilidades.js";
 
 function desenharProdutosCheckout() {
   const idsProdutoCarrinhoComQuantidade = lerLocalStorage("carrinho") ?? {};
@@ -15,8 +15,6 @@ function desenharProdutosCheckout() {
     );
   }
 }
-
-
 
 function finalizarCompra(evento) {
   evento.preventDefault();
@@ -36,13 +34,7 @@ function finalizarCompra(evento) {
 
   salvarLocalStorage("historico", historicoDePedidosAtualizados);
   apagarDoLocalStorage("carrinho");
-    
-  window.location.href = "./pedidos.html";
-
-
-    // window.location.href = "./pedidos.html";
-    
-   
+  window.location.href = "./pedidos.html";  
 }
 
 desenharProdutosCheckout();
