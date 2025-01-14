@@ -86,7 +86,7 @@ npm run dev
 
 4. Acesse o projeto no navegador:   
 
-- O site estará disponível em **http://localhost:3000**.   
+- O site estará disponível em **http://localhost:5173**.   
 
 ## Scripts   
 
