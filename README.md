@@ -69,7 +69,7 @@ Para rodar o projeto localmente, siga os passos abaixo:
 
 ```   
 git clone https://github.com/Gilvan-R-A/top-magazine-website
-cd top-magazine-website
+cd 'Top Magazine'/
 ```   
 
 2. Instale as dependências:   
