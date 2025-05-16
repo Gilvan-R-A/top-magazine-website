@@ -1,6 +1,6 @@
 import { catalogo, salvarLocalStorage, lerLocalStorage } from "./utilidades";
 
-const idsProdutoCarrinhoComQuantidade = lerLocalStorage(carrinho) ?? {};
+const idsProdutoCarrinhoComQuantidade = lerLocalStorage("carrinho") ?? {};
 
 function abrirCarrinho() {
   document.getElementById("carrinho").classList.add("right-[0px]");
@@ -143,5 +143,4 @@ export function atualizarPrecoCarrinho() {
   }
   precoCarrinho.innerText = `Total: $ ${precoTotalCarrinho}`;
 }
-
 
