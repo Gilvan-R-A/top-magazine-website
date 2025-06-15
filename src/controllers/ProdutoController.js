@@ -3,6 +3,7 @@ import { catalogo } from "../models/ProdutoModel.js"
 export class ProdutoController {
     constructor(produtoView) {
         this.view = produtoView;
+        this.view.controller = this;
     }
 
     incializar() {
