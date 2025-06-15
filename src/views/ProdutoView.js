@@ -29,6 +29,23 @@ export class ProdutoView {
                     .addEventListener("click", () => this.controller.adicionarAoCarrinho(produto.id));            
         });
     }
+
+    exibirTodos() {
+        const produtos = this.container.querySelectorAll(".hidden");
+        produtos.forEach(p => p.classList.remove("hidden"));
+    }
+
+    esconderApenas(classeParaEsconder) {
+        this.exibirTodos();
+        const produtos = this.container.querySelectorAll(`.${classeParaEsconder}`);
+        produtos.forEach(p => p.classList.add("hidden"));
+    }
+
+    configurarBotoesFiltro() {
+        document.getElementById("exibir-todos").addEventListener("click", () => this.controller.filtrar("todos"));
+        document.getElementById("exibir-notebooks").addEventListener("click", () => this.controller.filtrar("notebooks"));
+        document.getElementById("exibir-acessorios").addEventListener("click", () => this.controller.filtrar("acessorios"));
+    }
 }
 
 
