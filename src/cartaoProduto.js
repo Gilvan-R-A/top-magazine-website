@@ -1,4 +1,4 @@
-import { catalogo } from "./utilidades";
+// import { catalogo } from "./utilidades";
 import { adicionarAoCarrinho } from "./menuCarrinho";
 
 export function renderizarCatalago() {
