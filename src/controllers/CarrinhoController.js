@@ -20,8 +20,8 @@ export class CarrinhoController {
         });
 
         document.getElementById("finalizar-compra").addEventListener("click", () => {
-            if (Object.keys(this.model.obterItens().length > 0)) {
-                window.location.href = "../../checkout.html";
+            if (Object.keys(this.model.obterItens()).length > 0) {
+                window.location.href = "/top-magazine-website/checkout.html";
             }
         });
     }
