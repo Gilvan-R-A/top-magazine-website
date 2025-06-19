@@ -27,7 +27,7 @@ export class ProdutoView {
         produtos.forEach(produto => {
             const cartao = document.createElement("div");
             cartao.className = 
-                `border-solid w-48 m-2 flex-col p-2 justify-between shadow-xl shadow-slate-400 rounded-lg group ${produto.acessorio ? "acessorio" : "notebook"}`;
+                `border-solid w-48 m-2 flex flex-col p-2 justify-between shadow-xl shadow-slate-400 rounded-lg group ${produto.acessorio ? "acessorio" : "notebook"}`;
             cartao.id = `card-produto-${produto.id}`;
 
             cartao.innerHTML = `
@@ -35,7 +35,7 @@ export class ProdutoView {
                 <p class="text-sm">${produto.marca}</p>
                 <p class="text-sm">${produto.nome}</p>
                 <p class="text-sm">${produto.preco}</p>
-                <button id="adicionar-${produto.id}" class="bg-slate-950 hover:bg-slate-700 text-slate-200">
+                <button id="adicionar-${produto.id}" class="bg-slate-950 hover:bg-slate-700 text-slate-200 py-3 px-4 rounded-lg w-full  transition duration-300">
                     <i class="fa-solid fa-cart-plus"></i>
                 </button>`;
 
