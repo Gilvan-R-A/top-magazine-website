@@ -6,7 +6,13 @@ export default defineConfig({
   base: "/top-magazine-website/",
   plugins: [],
   resolve: {
-    /*something*/
+    alias: {
+      "@": resolve(__dirname, "src"),
+      "@utils": resolve(__dirname, "src/utils"),
+      "@views": resolve(__dirname, "src/views"),
+      "@models": resolve(__dirname, "src/models"),
+      "@controllers": resolve(__dirname, "src/controllers"),
+    }
   },
   css: {
     postcss: {

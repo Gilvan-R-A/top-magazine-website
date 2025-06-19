@@ -1,14 +1,21 @@
-import { catalogo } from "../models/ProdutoModel.js"
+import { ProdutoModel } from "@models/ProdutoModel.js"
+import { CarrinhoModel } from "@models/CarrinhoModel.js";
 
 export class ProdutoController {
     constructor(produtoView) {
         this.view = produtoView;
         this.view.controller = this;
+        this.carrinho = new CarrinhoModel();
     }
 
-    incializar() {
+    inicializar() {
+        const catalogo = ProdutoModel.listar();
         this.view.renderizarCatalogo(catalogo);
         this.view.configurarBotoesFiltro();
+    }
+
+    adicionarAoCarrinho(idProduto) {
+        this.carrinho.adicionar(idProduto);
     }
 
     filtrar(tipo) {

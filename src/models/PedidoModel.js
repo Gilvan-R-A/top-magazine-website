@@ -1,4 +1,4 @@
-import { lerLocalStorage } from "../utils/utilidades.js";
+import { lerLocalStorage } from "@utils/StorageUtil.js";
 
 export class PedidoModel {
     static obterHistorico() {

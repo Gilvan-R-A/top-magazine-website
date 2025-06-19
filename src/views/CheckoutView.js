@@ -1,15 +1,18 @@
-import { desenharProdutoNoCarrinhoSimples, catalogo } from "../utils/utilidades.js";
-import { CheckoutModel } from "../models/CheckoutModel.js";
+import { CheckoutModel } from "@models/CheckoutModel.js";
+import { ProdutoModel } from "@models/ProdutoModel.js";
+import { CarrinhoView } from "./CarrinhoView.js";
 
 export class CheckoutView {
     static renderizarProdutos() {
         const carrinho = CheckoutModel.obterCarrinho();
+        const catalogo = ProdutoModel.listar();
+        const carrinhoView = new CarrinhoView();
+
         for(const idProduto in carrinho) {
-            desenharProdutoNoCarrinhoSimples(
-                idProduto, 
-                "container-produtos-checkout", 
-                carrinho[idProduto]
-            );
+            const produto = catalogo.find(p => p.id === idProduto);
+            if(produto) {
+                carrinhoView.desenharProduto(produto, "container-produtos-checkout", carrinho[idProduto]);
+            }
         }
     }
 

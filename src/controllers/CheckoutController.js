@@ -1,5 +1,5 @@
-import { CheckoutModel } from "../models/CheckoutModel.js";
-import { CheckoutView } from "../views/CheckoutView.js";
+import { CheckoutModel } from "@models/CheckoutModel.js";
+import { CheckoutView } from "@views/CheckoutView.js";
 
 export class CheckoutController {
     static inicializar() {
@@ -10,7 +10,7 @@ export class CheckoutController {
             evento.preventDefault();
             const sucesso = CheckoutModel.finalizarPedido();
             if(sucesso) {
-                window.location.href = "./pedidos.html"
+                window.location.href = "../../pedidos.html"
             }
         });
     }

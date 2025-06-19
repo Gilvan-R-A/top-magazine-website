@@ -1,14 +1,12 @@
-import {
-  apagarDoLocalStorage,
-  desenharProdutoNoCarrinhoSimples,
-  lerLocalStorage,
-  salvarLocalStorage,
-  catalogo,
-} from "./src/utilidades.js";
+import { apagarDoLocalStorage, lerLocalStorage, salvarLocalStorage } from "@utils/StorageUtil.js";
+import { ProdutoModel } from "@models/ProdutoModel.js";
+import { CarrinhoView } from "@views/CarrinhoView.js";
 
-export function calcularPrecoCarrinho(carrinho, catalogo) {
+export function calcularPrecoCarrinho(carrinho) {
   const precoCarrinho = document.getElementById("preco-total");
   let precoTotalCarrinho = 0;
+
+  const catalogo = ProdutoModel.listar();
 
   for (const idProduto in carrinho) {
     const produto = catalogo.find((p) => p.id === idProduto);
@@ -20,14 +18,16 @@ export function calcularPrecoCarrinho(carrinho, catalogo) {
 
 function desenharProdutosCheckout() {
   const carrinho = lerLocalStorage("carrinho") ?? {};
+  const catalogo = ProdutoModel.listar();
+  const carrinhoView = new CarrinhoView();
+
   for (const idProduto in carrinho) {
-    desenharProdutoNoCarrinhoSimples(
-      idProduto,
-      "container-produtos-checkout",
-      carrinho[idProduto]
-    );
+    const produto = catalogo.find(p => p.id === idProduto);
+    if(produto) {
+      carrinhoView.desenharProduto(produto, "container-produtos-checkout", carrinho[idProduto]);
+    }
   }
-  calcularPrecoCarrinho(carrinho, catalogo);
+  calcularPrecoCarrinho(carrinho);
 }
 
 function finalizarCompra(evento) {
@@ -48,7 +48,7 @@ function finalizarCompra(evento) {
 
   salvarLocalStorage("historico", historicoDePedidosAtualizados);
   apagarDoLocalStorage("carrinho");
-  window.location.href = "./pedidos.html";  
+  window.location.href = "../../pedidos.html";  
 }
 
 desenharProdutosCheckout();

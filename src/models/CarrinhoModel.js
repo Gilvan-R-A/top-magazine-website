@@ -1,4 +1,4 @@
-import { salvarLocalStorage, lerLocalStorage } from "../utils/utilidades.js"
+import { salvarLocalStorage, lerLocalStorage } from "@utils/StorageUtil.js"
 
 export class CarrinhoModel {
     constructor() {

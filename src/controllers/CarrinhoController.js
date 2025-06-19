@@ -1,11 +1,12 @@
-import { CarrinhoModel } from "../models/CarrinhoModel.js";
-import { CarrinhoView } from "../views/CarrinhoView.js";
-import { catalogo } from "../utils/utilidades.js";
+import { CarrinhoModel } from "@models/CarrinhoModel.js";
+import { CarrinhoView } from "@views/CarrinhoView.js";
+import { ProdutoModel } from "@models/ProdutoModel.js"
+
 
 export class CarrinhoController {
     constructor() {
         this.model = new CarrinhoModel();
-        this.view = new CarrinhoView(this.model, catalogo);
+        this.view = new CarrinhoView(this.model, ProdutoModel.listar());
     }
 
     inicializar() {
@@ -20,14 +21,14 @@ export class CarrinhoController {
 
         document.getElementById("finalizar-compra").addEventListener("click", () => {
             if (Object.keys(this.model.obterItens().length > 0)) {
-                window.location.href = "./checkout.html";
+                window.location.href = "../../checkout.html";
             }
         });
     }
 
     adicionar(id) {
         this.model.adicionar(id);
-        const produto = catalogo.find((p) => p.id === id);
+        const produto = ProdutoModel.listar().find((p) => p.id === id);
         this.view.desenharProduto(produto, this);
         this.view.atualizarPreco();
     }

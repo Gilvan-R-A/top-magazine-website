@@ -1,10 +1,5 @@
-import { 
-    lerLocalStorage, 
-    salvarLocalStorage, 
-    apagarDoLocalStorage, 
-    catalogo,
-
-} from "../utils/utilidades.js"
+import { lerLocalStorage, salvarLocalStorage, apagarDoLocalStorage } from "@utils/StorageUtil.js";
+import { ProdutoModel } from "./ProdutoModel.js";
 
 export class CheckoutModel {
     static obterCarrinho() {
@@ -14,7 +9,7 @@ export class CheckoutModel {
     static calcularTotal(carrinho) {
         let total = 0;
         for(const idProduto in carrinho) {
-            const produto = catalogo.find((p) => p.id === idProduto);
+            const produto = ProdutoModel.listar().find((p) => p.id === idProduto);
             total += produto.preco * carrinho[idProduto];
         }
         return total;

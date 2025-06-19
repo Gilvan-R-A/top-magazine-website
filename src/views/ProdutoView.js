@@ -31,7 +31,7 @@ export class ProdutoView {
             cartao.id = `card-produto-${produto.id}`;
 
             cartao.innerHTML = `
-                <img src="./assets/img/${produto.imagem}" alt="${produto.nome}" class="group-hover:scale-110 duration-300 my-3 rounded-lg">
+                <img src="../../public/assets/img/${produto.imagem}" alt="${produto.nome}" class="group-hover:scale-110 duration-300 my-3 rounded-lg">
                 <p class="text-sm">${produto.marca}</p>
                 <p class="text-sm">${produto.nome}</p>
                 <p class="text-sm">${produto.preco}</p>

@@ -1,5 +1,5 @@
-import { PedidoModel } from "../models/PedidoModel.js";
-import { PedidoView } from "../views/PedidoView.js";
+import { PedidoModel } from "@models/PedidoModel.js";
+import { PedidoView } from "@views/PedidoView.js";
 
 export class PedidoController {
     constructor(view) {

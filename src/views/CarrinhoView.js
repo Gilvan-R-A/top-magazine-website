@@ -31,14 +31,14 @@ export class CarrinhoView {
         <button id="remover-item-${produto.id}" class="absolute top-0 right-2">
             <i class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"></i>
         </button>
-        <img src="./assets/img/${produto.imagem}" alt="${produto.nome}" class="h-24 rounded-lg"/>
+        <img src="../../public/assets/img/${produto.imagem}" alt="${produto.nome}" class="h-24 rounded-lg"/>
         <div class="p-2" flex flex-col justify-between>
             <p class="text-slate-900 text-sm">${produto.nome}</p>
             <p class="text-slate-400 text-xs">${produto.marca}</p>
             <p class="text-green-700 text-lg">${produto.preco}</p>
         </div>
         <div class="flex text-slate-950 itens-end absolute bottom-0 right-2 text-lg">
-            <button id="decrementar-produto-${produto}">-</button>
+            <button id="decrementar-produto-${produto.id}">-</button>
             <p id="quantidade-${produto.id}" class="ml-2">${this.model.obterItens()[produto.id]}</p>
             <button id="incrementar-produto-${produto.id}" class="ml-2">+</button>    
         </div>`
