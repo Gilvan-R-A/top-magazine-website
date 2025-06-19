@@ -47,7 +47,7 @@ export class CarrinhoView {
 
         document.getElementById(`remover-item-${produto.id}`).addEventListener("click", () => eventos.remover(produto.id));
         document.getElementById(`incrementar-produto-${produto.id}`).addEventListener("click", () => eventos.incrementar(produto.id));
-        document.getElementById(`decrementar-produto-${produto.id}`).addEventListener("Click", () => eventos.decrementar(produto.id));
+        document.getElementById(`decrementar-produto-${produto.id}`).addEventListener("click", () => eventos.decrementar(produto.id));
     }
 
     renderizarTodos(eventos) {
