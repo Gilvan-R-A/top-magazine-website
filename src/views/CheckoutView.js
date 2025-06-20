@@ -1,19 +1,33 @@
 import { CheckoutModel } from "@models/CheckoutModel.js";
 import { ProdutoModel } from "@models/ProdutoModel.js";
 import { CarrinhoView } from "./CarrinhoView.js";
+import { CarrinhoModel } from "@models/CarrinhoModel.js";
 
 export class CheckoutView {
     static renderizarProdutos() {
-        const carrinho = CheckoutModel.obterCarrinho();
+        const carrinhoModel = new CarrinhoModel();
         const catalogo = ProdutoModel.listar();
-        const carrinhoView = new CarrinhoView();
+        const carrinhoView = new CarrinhoView(carrinhoModel, catalogo, "container-produtos-checkout");
 
-        for(const idProduto in carrinho) {
-            const produto = catalogo.find(p => p.id === idProduto);
-            if(produto) {
-                carrinhoView.desenharProduto(produto, "container-produtos-checkout", carrinho[idProduto]);
+        const eventos = {
+            remover: (id) => {
+                carrinhoModel.remover(id);
+                carrinhoView.renderizarTodos(eventos);
+                CheckoutView.renderizarTotal();
+            },
+            incrementar: (id) => {
+                carrinhoModel.incrementar(id);
+                carrinhoView.renderizarTodos(eventos);
+                CheckoutView.renderizarTotal();
+            },
+            decrementar: (id) => {
+                carrinhoModel.decrementar(id);
+                carrinhoView.renderizarTodos(eventos);
+                CheckoutView.renderizarTotal();
             }
         }
+
+        carrinhoView.renderizarTodos(eventos);
     }
 
     static renderizarTotal() {

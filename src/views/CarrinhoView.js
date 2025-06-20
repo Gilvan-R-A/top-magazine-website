@@ -1,8 +1,8 @@
 export class CarrinhoView {
-    constructor(carrinhoModel, catalogo) {
+    constructor(carrinhoModel, catalogo, containerId = "produtos-carrinho") {
         this.model = carrinhoModel;
         this.catalogo = catalogo;
-        this.container = document.getElementById("produtos-carrinho");
+        this.container = document.getElementById(containerId);
         this.precoTotal = document.getElementById("preco-total");
     }
 
@@ -25,10 +25,10 @@ export class CarrinhoView {
 
     desenharProduto(produto, eventos) {
         const artigo = document.createElement("article");
-        artigo.classList.add("flex", "bg-slate-100", "rounded-lg", "p-1", "relative");
+        artigo.classList.add("w-full","flex", "bg-slate-100", "rounded-lg", "p-1", "relative", "mb-2");
 
         artigo.innerHTML = `
-        <button id="remover-item-${produto.id}" class="absolute top-0 right-2">
+        <button type="button" id="remover-item-${produto.id}" class="absolute top-0 right-2">
             <i class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"></i>
         </button>
         <img src="../../public/assets/img/${produto.imagem}" alt="${produto.nome}" class="h-24 rounded-lg"/>
@@ -38,9 +38,9 @@ export class CarrinhoView {
             <p class="text-green-700 text-lg">${produto.preco}</p>
         </div>
         <div class="flex text-slate-950 itens-end absolute bottom-0 right-2 text-lg">
-            <button id="decrementar-produto-${produto.id}">-</button>
+            <button type="button" id="decrementar-produto-${produto.id}">-</button>
             <p id="quantidade-${produto.id}" class="ml-2">${this.model.obterItens()[produto.id]}</p>
-            <button id="incrementar-produto-${produto.id}" class="ml-2">+</button>    
+            <button type="button" id="incrementar-produto-${produto.id}" class="ml-2">+</button>    
         </div>`
 
         this.container.appendChild(artigo);
