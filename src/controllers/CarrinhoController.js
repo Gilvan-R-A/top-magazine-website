@@ -11,18 +11,14 @@ export class CarrinhoController {
 
     inicializar() {
         this.view.renderizarTodos(this);
+        this.ativarBotaoFinalizarCompra();
+
         document.getElementById("abrir-carrinho").addEventListener("click", () => {
             document.getElementById("carrinho").classList.replace("right-[-360px]", "right-[0px]");          
         });
 
         document.getElementById("fechar-carrinho").addEventListener("click", () => {
             document.getElementById("carrinho").classList.replace("right-[0px]", "right-[-360px]");        
-        });
-
-        document.getElementById("finalizar-compra").addEventListener("click", () => {
-            if (Object.keys(this.model.obterItens()).length > 0) {
-                window.location.href = "/top-magazine-website/checkout.html";
-            }
         });
     }
 
@@ -31,10 +27,12 @@ export class CarrinhoController {
         const produto = ProdutoModel.listar().find((p) => p.id === id);
         this.view.desenharProduto(produto, this);
         this.view.atualizarPreco();
+        this.ativarBotaoFinalizarCompra();
     }
      remover(id) {
         this.model.remover(id);
         this.view.renderizarTodos(this);
+        this.ativarBotaoFinalizarCompra();
      }
 
      incrementar(id) {
@@ -46,8 +44,24 @@ export class CarrinhoController {
      decrementar(id) {
         this.model.decrementar(id);
         this.view.renderizarTodos(this);
+        this.ativarBotaoFinalizarCompra();
+     }
+
+     ativarBotaoFinalizarCompra() {
+        const btn = document.getElementById("finalizar-compra");
+        if(btn) {
+            btn.onclick = () => {
+
+                const itensAtualizados = new CarrinhoModel().obterItens();
+
+                if (Object.keys(itensAtualizados).length > 0) {
+                    window.location.href = "/top-magazine-website/checkout.html";
+                } else {
+                    alert("Seu carrinho está vazio!");
+                }
+            };
+        }
      }
 
 }
-
 
