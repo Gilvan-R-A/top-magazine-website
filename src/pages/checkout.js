@@ -1,12 +1,43 @@
 import { CheckoutController } from "../controllers/CheckoutController.js";
 import { CheckoutModel } from "../models/CheckoutModel.js";
 
+function validarCampo(inputId, condicaoValida, mensagemErro) {
+    const input = document.getElementById(inputId);
+    const erro = document.getElementById(`erro-${inputId}`);
+
+    if (!condicaoValida) {
+        input.classList.remove("border-slate-200");
+        input.classList.add("border-red-500");
+        erro.textContent = mensagemErro;
+        erro.classList.remove("hidden");
+        input.focus();
+        return false;
+    } else {
+        input.classList.remove("border-red-500");
+        input.classList.add("border-slate-200");
+        erro.classList.add("hidden");
+        erro.textContent = "";
+        return true;
+    }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     CheckoutController.inicializar();
     aplicarMascaras();
 
     const form = document.querySelector("form");
+
+    document.querySelectorAll("input").forEach(input => {
+        input.addEventListener("input", () => {
+            const erro = document.getElementById(`erro-${input.id}`);
+            input.classList.remove("border-red-500");
+            input.classList.add("border-slate-200");
+            if (erro) {
+                erro.classList.add("hidden");
+                erro.textContent = "";
+            }
+        });
+    });
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -29,54 +60,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const cvvRegex = /^\d{3}$/;
         const dataRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
         const cepRegex = /^\d{5}-\d{3}$/;
-        // const numeroRegex = /^\d{1,5}$/;
+  
+        const validoNome = validarCampo("nome", nomeRegex.test(nome), "Nome inválido. Digite seu nome completo.");
+        const validoEmail = validarCampo("email", emailRegex.test(email), "Email inválido.");
+        const validoTelefone = validarCampo("telefone", telefoneRegex.test(telefone), "Telefone inválido. Use o formato (99) 99999-9999");
+        const validoCartao = validarCampo("numero-cartao", cartaoRegex.test(numeroCartao), "Número do cartão inválido");
+        const validoCVV = validarCampo("cvv", cvvRegex.test(cvv), "CVV deve ter 3 dígitos.");
+        const validoData = validarCampo("data-expiracao", dataRegex.test(dataExpiracao), "Data de expiração inválida. Use MM/AA.");
+        const validoCEP = validarCampo("cep", cepRegex.test(cep), "CEP inválido. Use o formato 99999-999");
+        const validoEndereco = validarCampo("endereco", endereco.length >= 5 && endereco.includes(" "), "Endereço inválido. Informe nome completo da rua.");
+        const validoNumero = validarCampo("numero", numero === "" || /^\d+$/.test(numero) || numero.toLowerCase() === "s/n", "Número inválido. Use apenas números ou 's/n'.");
+        const validoComplemento = validarCampo("complemento", complemento.length === 0 || complemento.length >= 2, "Complemento inválido. Deixe em branco ou preencha corretamente.");
 
-        if (!nomeRegex.test(nome)) {
-            alert("Nome inválido. Digite nome completo.");
-        }
-
-        if(!emailRegex.test(email)) {
-            alert("Email inválido.");
-            return;
-        }
-        
-        if (!telefoneRegex.test(telefone)) {
-            alert("Telefone inválido. Use o formato (99) 99999-9999");
-            return;
-        }
-        
-        if (!cartaoRegex.test(numeroCartao)) {
-            alert("Número do cartão inválido.");
-            return;
-        }
-        
-        if (!cvvRegex.test(cvv)) {
-            alert("CVV deve ter 3 dígitos.");
-            return;
-        }
-        
-        if (!dataRegex.test(dataExpiracao)) {
-            alert("Data de expiração inválida. Use MM/AA");
-            return;
-        }
-        
-        if (!cepRegex.test(cep)) {
-            alert("CEP inválido. Use o formato 99999-999.");
-            return;
-        }
-
-        if (endereco.length < 5 || !endereco.includes(" ")) {
-            alert("Endereço inválido. Informe nome completo da rua.");
-            return;
-        }
-
-        if (numero && !/^\d+$/.test(numero) && numero.toLowerCase() !== "s/n") {
-            alert("Número do endereço inválido. Use apenas números ou 's/n'.");
-            return;
-        }
-
-        if (complemento.length > 0 && complemento.length < 2) {
-            alert("Complemento inválido. Deixe em branco ou preencha corretamente.");
+        if (
+            !validoNome || !validoEmail || !validoTelefone || !validoCartao || !validoCVV || !validoData || !validoCEP || !validoEndereco || !validoNumero || !validoComplemento
+        ) {
             return;
         }
 
