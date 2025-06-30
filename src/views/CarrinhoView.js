@@ -56,7 +56,7 @@ export class CarrinhoView {
         </div>
             ` : `
             <div class="text-slate-950 text-sm items-end absolute bottom-0 right-2">
-                <p>${qtd}</p>
+                <p>Quantidade: ${qtd}</p>
             </div>
             `}       
         `;
