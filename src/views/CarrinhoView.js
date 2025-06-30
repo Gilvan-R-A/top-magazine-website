@@ -1,3 +1,5 @@
+import { BASE_URL } from "@utils/config.js";
+
 export class CarrinhoView {
     constructor(carrinhoModel, catalogo, containerId = "produtos-carrinho") {
         this.model = carrinhoModel;
@@ -41,7 +43,7 @@ export class CarrinhoView {
         </button>
         `: ""}
 
-        <img src="../../public/assets/img/${produto.imagem}" alt="${produto.nome}" class="h-24 rounded-lg"/>
+        <img src="${BASE_URL}assets/img/${produto.imagem}" alt="${produto.nome}" class="h-24 rounded-lg"/>
         <div class="p-2 flex flex-col justify-between">
             <p class="text-slate-900 text-sm">${produto.nome}</p>
             <p class="text-slate-400 text-xs">${produto.marca}</p>

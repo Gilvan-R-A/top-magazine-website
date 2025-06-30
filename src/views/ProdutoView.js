@@ -1,3 +1,5 @@
+import { BASE_URL } from "@utils/config.js";
+
 export class ProdutoView {
     constructor(controller, containerId = "container-produto") {
         this.controller = controller;
@@ -31,7 +33,7 @@ export class ProdutoView {
             cartao.id = `card-produto-${produto.id}`;
 
             cartao.innerHTML = `
-                <img src="../../public/assets/img/${produto.imagem}" alt="${produto.nome}" class="group-hover:scale-110 duration-300 my-3 rounded-lg">
+                <img src="${BASE_URL}assets/img/${produto.imagem}" alt="${produto.nome}" class="group-hover:scale-110 duration-300 my-3 rounded-lg">
                 <p class="text-sm">${produto.marca}</p>
                 <p class="text-sm">${produto.nome}</p>
                 <p class="text-sm">${produto.preco}</p>
