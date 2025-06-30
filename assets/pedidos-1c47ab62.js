@@ -1,0 +1,3 @@
+import{C as l,P as u,l as h}from"./ProdutoModel-d5c3e898.js";class P{constructor(o){this.container=document.querySelector(o)}desenharPedido(o){const e=u.listar(),r=new l,s=new Date(o.dataPedido).toLocaleString("pt-BR",{hour:"2-digit",minute:"2-digit",day:"2-digit",month:"2-digit",year:"numeric"}),t=`container-pedidos-${o.dataPedido}`,c=`
+        <p class="text-xl text-bold my-4">${s}</p>
+        <section id="${t}" class="bg-slate-300 p-3 rounded-md w-full max-w-xl flex flex-col gap-2"></section>`;this.container.insertAdjacentHTML("beforeend",c);for(const d in o.pedido){const n=e.find(a=>a.id===d);n&&r.desenharProduto(n,t,o.pedido[d])}}}function f(){const i=h("historico")??[],o=new P("main");i.forEach(e=>o.desenharPedido(e))}f();

@@ -12,18 +12,18 @@
       referrerpolicy="no-referrer"
     />
     <title>Top Magazine</title>
-    <script type="module" crossorigin src="/top-magazine-website/assets/checkout-2fd78a04.js"></script>
-    <link rel="modulepreload" crossorigin href="/top-magazine-website/assets/utilidades-4a056c5e.js">
-    <link rel="stylesheet" href="/top-magazine-website/assets/utilidades-c2ee407a.css">
+    <script type="module" crossorigin src="/top-magazine-website/assets/checkout-8a126b37.js"></script>
+    <link rel="modulepreload" crossorigin href="/top-magazine-website/assets/ProdutoModel-d5c3e898.js">
+    <link rel="modulepreload" crossorigin href="/top-magazine-website/assets/CarrinhoModel-4a223fde.js">
+    <link rel="stylesheet" href="/top-magazine-website/assets/ProdutoModel-870cd1f0.css">
   </head>
   <body class="bg-stone-200 flex flex-col h-screen">
     <header
       class="flex text-xl bg-slate-950 px-8 py-4 justify-between sticky top-0 shadow-xl shadow-slate-400 z-10"
     >
-    <a href="./">
-      <h1 class="flex h-16 logo">Top Magazine</h1>
-    </a>
-      
+      <a href="./">
+        <h1 class="flex h-16 logo">Top Magazine</h1>
+      </a>
     </header>
     <form class="flex w-100 px-5 gap-4 py-10 grow">
       <section id="dados-usuario" class="w-1/3 bg-white rounded-lg py-5">
@@ -35,8 +35,11 @@
             id="nome"
             class="rounded-sm px-2 border-2 border-slate-200 py-1"
             placeholder="João Pinheiro"
-            required
           />
+          <small
+            id="erro-nome"
+            class="text-red-600 text-xs mt-1 hidden"
+          ></small>
         </div>
 
         <div class="flex flex-col px-10 py-3">
@@ -46,8 +49,11 @@
             id="email"
             class="rounded-sm px-2 border-2 border-slate-200 py-1"
             placeholder="joao.pinheiro@gmail.com"
-            required
           />
+          <small
+            id="erro-email"
+            class="text-red-600 text-xs mt-1 hidden"
+          ></small>
         </div>
 
         <div class="flex flex-col px-10 py-3">
@@ -59,8 +65,11 @@
             id="telefone"
             class="rounded-sm px-2 border-2 border-slate-200 py-1"
             placeholder="(21) 9988887766"
-            required
           />
+          <small
+            id="erro-telefone"
+            class="text-red-600 text-xs mt-1 hidden"
+          ></small>
         </div>
       </section>
 
@@ -75,8 +84,11 @@
             id="numero-cartao"
             class="rounded-sm px-2 border-2 border-slate-200 py-1"
             placeholder="1111 1111 1111 1111"
-            required
           />
+          <small
+            id="erro-numero-cartao"
+            class="text-red-600 text-xs mt-1 hidden"
+          ></small>
         </div>
 
         <div class="flex">
@@ -87,8 +99,11 @@
               id="cvv"
               class="rounded-sm px-2 border-2 border-slate-200 py-1"
               placeholder="222"
-              required
             />
+            <small
+              id="erro-cvv"
+              class="text-red-600 text-xs mt-1 hidden"
+            ></small>
           </div>
           <div class="flex flex-col px-10 py-3 w-1/2">
             <label for="data-expiracao" class="font-bold text-sm mb-2"
@@ -99,8 +114,11 @@
               id="data-expiracao"
               class="rounded-sm px-2 border-2 border-slate-200 py-1"
               placeholder="10/24"
-              required
             />
+            <small
+              id="erro-data-expiracao"
+              class="text-red-600 text-xs mt-1 hidden"
+            ></small>
           </div>
         </div>
 
@@ -111,8 +129,8 @@
             id="cep"
             class="rounded-sm px-2 border-2 border-slate-200 py-1"
             placeholder="111122-333"
-            required
           />
+          <small id="erro-cep" class="text-red-600 text-xs mt-1 hidden"></small>
         </div>
         <div class="flex flex-col px-10 py-3">
           <label for="endereco" class="font-bold text-sm mb-2">Endereco</label>
@@ -121,8 +139,11 @@
             id="endereco"
             class="rounded-sm px-2 border-2 border-slate-200 py-1"
             placeholder="Rua das Acácias"
-            required
           />
+          <small
+            id="erro-endereco"
+            class="text-red-600 text-xs mt-1 hidden"
+          ></small>
         </div>
         <div class="flex">
           <div class="flex flex-col px-10 py-3 w-1/2">
@@ -132,8 +153,11 @@
               id="numero"
               class="rounded-sm border-2 border-slate-200 py-1"
               placeholder="444"
-              required
             />
+            <small
+              id="erro-numero"
+              class="text-red-600 text-xs mt-1 hidden"
+            ></small>
           </div>
           <div class="flex flex-col px-10 py-3 w-1/2">
             <label for="complemento" class="font-bold text-sm mb-2"
@@ -144,17 +168,20 @@
               id="complemento"
               class="rounded-sm px-2 border-2 border-slate-200 py-1"
               placeholder="555"
-              required
             />
+            <small
+              id="erro-complemento"
+              class="text-red-600 text-xs mt-1 hidden"
+            ></small>
           </div>
         </div>
       </section>
 
       <section id="produtos-checkout" class="w-1/3 bg-white rounded-lg py-5">
         <section
-        id="container-produtos-checkout"
-        class="h-4/5 overflow-y-auto px-4 flex flex-col items-center"
-      ></section>
+          id="container-produtos-checkout"
+          class="h-4/5 overflow-y-auto px-4 flex flex-col items-center"
+        ></section>
         <section
           id="celula-checkout"
           class="flex flex-col px-2 h-1/5 justify-around"
@@ -162,9 +189,7 @@
           <p
             id="preco-total"
             class="bg-slate-200 text-green-800 rounded-lg pl-5"
-          >
-           
-          </p>
+          ></p>
           <button
             class="bg-slate-900 text-slate-200 p-1 hover:bg-slate-800"
             type="submit"
