@@ -9,7 +9,7 @@
 ## Tecnologias Utilizadas  
 
 - **HTML5**: Estruturação e organização das páginas.
-- **CSS3** + **Tailwind CSS**: Estilização do site, rsponsiva e baseada em utilitários.
+- **CSS3** + **Tailwind CSS**: Estilização do site responsiva e baseada em utilitários.
 - **JavaScript**: Funcionalidades dinâmicas, interação com o carrinho, filtros e persistência de dados.
 - **Vite**: Ferramenta de build para otimizar o desenvolvimento e a construção da aplicação.
 - **LocalStorage**: Armazenamento dos dados do carrinho e pedidos.   
