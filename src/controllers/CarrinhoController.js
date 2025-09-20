@@ -55,7 +55,7 @@ export class CarrinhoController {
                 const itensAtualizados = new CarrinhoModel().obterItens();
 
                 if (Object.keys(itensAtualizados).length > 0) {
-                    window.location.href = "/checkout.html";
+                    window.location.href = "./checkout.html";
                 } else {
                     alert("Seu carrinho está vazio!");
                 }
