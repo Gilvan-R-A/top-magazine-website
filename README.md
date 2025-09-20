@@ -13,6 +13,8 @@
 - **JavaScript**: Funcionalidades dinâmicas, interação com o carrinho, filtros e persistência de dados.
 - **Vite**: Ferramenta de build para otimizar o desenvolvimento e a construção da aplicação.
 - **LocalStorage**: Armazenamento dos dados do carrinho e pedidos.   
+- **Docker + Docker Compose**: Configurações para enpacotar a aplicação em container
+- **Nginx**: Servidor Nginx   
 
 ## Estrutura de Diretórios   
 
@@ -42,6 +44,9 @@ top-magazine-website
 ├── tailwind.config.js      # Configuração do Tailwind CSS
 ├── vite.config.js          # Configuração do Vite para build e otimizações
 |__ README.md               # Documentação do projeto
+├── Dockerfile              # Configurações Docker
+├── docker-compose.yml      # Orquestração dos containers
+├── nginx.conf              # Configuração do servidor Nginx
 |__ package-lock.json       # Lockfile do npm
 └── package.json            # Dependências e scripts do projeto
    
@@ -68,7 +73,11 @@ top-magazine-website
 
    - O usuário pode visualizar o histórico de pedidos feitos, com detalhes sobre os produtos comprados e a data do pedido.   
 
-## Instalação   
+## Como executar:   
+
+Há 2 formas de rodar essa aplicação: tradicional ou docker   
+
+## 1. Tradicional
 
 Para rodar o projeto localmente, siga os passos abaixo:   
 
@@ -99,8 +108,28 @@ npm run dev
 
 - **npm run dev**: Inicia o servidor de desenvolvimento com hot-reloading.
 - **npm run build**: Gera os arquivos otimizados para produção.
-- **npm run preview**: Visualiza a versão otimizada em produção localmente.   
+- **npm run preview**: Visualiza a versão otimizada em produção localmente.  
 
+## 2. Docker   
+
+1. Clone o repositório:   
+
+```   
+git clone https://github.com/Gilvan-R-A/top-magazine-website.git
+cd top-magazine-website
+```   
+
+2. Construa e suba os containers:   
+
+```   
+docker-compose up --build
+```   
+
+3. Acesse no navegador:   
+
+```   
+http://localhost:8080
+```   
 
 ## Personalização   
 
