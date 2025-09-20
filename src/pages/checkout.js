@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const sucesso = CheckoutModel.finalizarPedido();
 
         if(sucesso) {
-            window.location.href = "/top-magazine-website/pedidos.html";
+            window.location.href = "/pedidos.html";
         } else {
             alert("Carrinho vazio. Não pe possível finalizar a compra.");
         }
